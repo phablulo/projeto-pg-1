@@ -6,8 +6,6 @@ Foi implementado um Ray Tracer usando Python 3 e as seguintes bibliotecas:
 
 - matplotlib, para visualização das imagens
 
-
-
 ### Funcionalidades:
 
 ###### Básicas
@@ -30,9 +28,9 @@ Os materiais possuem:
 
 - [x] Fator especular (ks)
 
-- [ ] Fator de transmissivo (kt)
+- [x] Fator de transmissivo (kt)
 
-- [ ] Fator de refração (kr)
+- [x] Fator de refração (kr)
 
 - [x] Coeficiente de rugosidade (alpha)
 
@@ -44,9 +42,9 @@ Os materiais possuem:
 
 - [x] Reflexões (1 ponto)
 
-- [ ] Refrações (2 pontos)
+- [x] Refrações (2 pontos)
 
-- [ ] Color Beeling (2 pontos)
+- [x] Depth of Field (1 ponto)
 
 ###### Extras
 
