@@ -14,13 +14,11 @@ Foi implementado um Ray Tracer usando Python 3 e as seguintes bibliotecas:
 
 A câmera possui:
 
-- [ ] Field of View (fov)
+- [x] Field of View (fov)
 
 - [x] Posição (pos)
 
-- [x] Ponto de Mira (target)
-
-- [ ] Vetor de orientação (up)
+- [x] Vetor de orientação (up)
 
 - [x] Distância para o plano de imagem (f)
 
@@ -32,11 +30,15 @@ Os materiais possuem:
 
 - [x] Fator especular (ks)
 
-- [ ] Coeficiente de rugosidade (alpha)
+- [ ] Fator de transmissivo (kt)
+
+- [ ] Fator de refração (kr)
+
+- [x] Coeficiente de rugosidade (alpha)
 
 - [x] Cor (rgb)
 
-###### Específicas
+###### Específicas de raytracing
 
 - [x] Sombras (1 ponto)
 
@@ -46,6 +48,6 @@ Os materiais possuem:
 
 - [ ] Color Beeling (2 pontos)
 
+###### Extras
 
-
-
+- [x] Planos
