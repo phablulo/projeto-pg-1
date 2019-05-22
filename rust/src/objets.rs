@@ -1,5 +1,6 @@
 use super::base::{Vector,Point,Color};
 use rand::Rng;
+pub use super::config::Background;
 
 pub struct Ray {
   origin: Point,
@@ -114,10 +115,11 @@ impl Object for Plane {
 }
 
 pub struct Light {
-  xyz: Point,
-  difuse: Color,
-  specular: Color
+  pub xyz: Point,
+  pub difuse: Color,
+  pub specular: Color
 }
+/* never used
 impl Light {
   pub fn from(xyz:Point, difuse: f32, specular: f32) -> Light {
     Light {
@@ -127,6 +129,7 @@ impl Light {
     }
   }
 }
+*/
 
 // ---
 #[derive(Debug)]
@@ -144,7 +147,8 @@ pub struct Camera {
   pub fov: f32,
   pub image_plane_distance: f32,
   pub width: i32,
-  pub height: i32
+  pub height: i32,
+  pub background: Background
 }
 impl Camera {
   pub fn set_target(&mut self, target: Point) {
@@ -170,16 +174,6 @@ impl Camera {
     let vert = &self.orientation*(h/2.0);
     let hori = self.left_orientation()*(w/2.0);
 
-    // println!("ratio {:?}", ratio);
-    // println!("width {:?}", self.width);
-    // println!("height {:?}", self.height);
-    // println!("center {:?}", center);
-    // println!("vert {:?}", vert);
-    // println!("hori {:?}", hori);
-    // println!("left {:?}", self.left_orientation());
-    // println!("orientation {:?}", self.orientation);
-    // println!("target {:?}", self.target);
-
     Bounds {
       tl: &center + ( &vert - &hori),
       tr: &center + ( &vert + &hori),
@@ -202,15 +196,20 @@ impl Camera {
     }
   }
   fn bg_color_for_ray(&self, ray: &Ray) -> Color {
-    let direction = ray.direction.normalized();
-    let alignment = direction.dot(&self.orientation);
-    let alignment = alignment.max(0.0).min(1.0);
-    let r = 1.0 - 0.35294117647*alignment;
-    let g = 1.0 - 0.20784313725*alignment;
-    Color {
-      r,
-      g,
-      b: 1.0
+    match &self.background {
+      Background::Sky => {
+        let direction = ray.direction.normalized();
+        let alignment = direction.dot(&self.orientation);
+        let alignment = alignment.max(0.0).min(1.0);
+        let r = 1.0 - 0.35294117647*alignment;
+        let g = 1.0 - 0.20784313725*alignment;
+        Color {
+          r,
+          g,
+          b: 1.0
+        }
+      },
+      Background::Black => Color::black()
     }
   }
   fn closest_object_index(&self, ray: &Ray, objects: &Vec<Box<Object>>) -> (i32, f32) {
@@ -236,14 +235,10 @@ impl Camera {
       if i == ignore_index {
         continue;
       }
-      let t = item.ray_intersection_distance(ray);
-      match t {
-        Some(dist) => {
-          if sml == -1.0 || dist < sml {
-            sml = dist;
-          }
-        },
-        None => ()
+      if let Some(t) = item.ray_intersection_distance(ray) {
+        if sml == -1.0 || t < sml {
+          sml = t;
+        }
       }
     }
     return sml > 0.0 && sml <= 1.0;
@@ -319,6 +314,7 @@ impl Camera {
     }
     return color.clip();
   }
+  /* never used
   pub fn get_directions(&self) -> Vec<Vec<[u8; 3]>> {
     let bounds = self.image_plane_bounds();
     let w = self.width as usize;
@@ -366,6 +362,7 @@ impl Camera {
     }
     return colors2;
   }
+  */
   pub fn take_picture(&self, objects: &Vec<Box<Object>>, lights: &Vec<Light>) -> Vec<Vec<[u8; 3]>> {
     let bounds = self.image_plane_bounds();
     let w = self.width as usize;
@@ -415,10 +412,12 @@ impl Camera {
     }
     return colors;
   }
+  /* never used
   pub fn focal_length_for_point(&self, point: &Point) -> f32 {
     let center = &self.xyz + self.image_plane_distance*&self.target;
     let vector = point - center;
     let projection_size = vector.dot(&self.target);
     return projection_size;
   }
+  */
 }

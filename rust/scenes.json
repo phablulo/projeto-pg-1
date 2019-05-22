@@ -1,0 +1,273 @@
+[
+  {
+    "name": "céu",
+    "background": "Sky",
+    "dof": {
+      "active": false,
+      "focal_length": 0,
+      "r": 0,
+      "samples": 0
+    },
+    "camera": {
+      "position": [0, 0, -1],
+      "target": [0, 0, 0],
+      "orientation": [0, 1, 0],
+      "fov": 0,
+      "image_plane_distance": 1,
+      "width": 640,
+      "height": 480,
+      "ambient_light": [0.6, 0.6, 0.6]
+    },
+    "objects": [],
+    "lights": []
+  },
+  {
+    "name": "cena-1",
+    "background": "Sky",
+    "dof": {
+      "active": false,
+      "focal_length": 0,
+      "r": 0,
+      "samples": 0
+    },
+    "camera": {
+      "position": [0, 0, -1],
+      "target": [0, 0, 0],
+      "orientation": [0, 1, 0],
+      "fov": 0,
+      "image_plane_distance": 1,
+      "width": 640,
+      "height": 480,
+      "ambient_light": [0.6, 0.6, 0.6]
+    },
+    "objects": [
+      {
+        "kind": "Plane",
+        "material": {
+          "rgb": [0.1, 0.9, 0.3],
+          "kd": 0.4,
+          "ks": 0.2,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 0,
+        "center": [0,0,0],
+        "normal": [0,1,0],
+        "point": [0,-1,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.8, 0.3, 0.2],
+          "kd": 0.5,
+          "ks": 0.6,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 1,
+        "center": [-0.8,0,4],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.3, 0.2, 0.9],
+          "kd": 0.4,
+          "ks": 0.2,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 0.6,
+        "center": [-2.5, -0.4, 3],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.8, 0.8, 0.8],
+          "kd": 0.5,
+          "ks": 0.3,
+          "kt": 0.9,
+          "kr": 0.8,
+          "alpha": 40
+        },
+        "r": 4,
+        "center": [3, 3, 6],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      }
+    ],
+    "lights": []
+  },
+  {
+    "name": "cena-2",
+    "background": "Sky",
+    "dof": {
+      "active": false,
+      "focal_length": 0,
+      "r": 0,
+      "samples": 0
+    },
+    "camera": {
+      "position": [5.0, 2.0, -2.0],
+      "target": [-0.8, 0.0, 4.0],
+      "orientation": [0, 1, 0],
+      "fov": 0,
+      "image_plane_distance": 1,
+      "width": 640,
+      "height": 480,
+      "ambient_light": [0.6, 0.6, 0.6]
+    },
+    "objects": [
+      {
+        "kind": "Plane",
+        "material": {
+          "rgb": [0.1, 0.9, 0.3],
+          "kd": 0.4,
+          "ks": 0.2,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 0,
+        "center": [0,0,0],
+        "normal": [0,1,0],
+        "point": [0,-1,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.8, 0.3, 0.2],
+          "kd": 0.5,
+          "ks": 0.6,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 1,
+        "center": [-0.8,0,4],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.3, 0.2, 0.9],
+          "kd": 0.4,
+          "ks": 0.2,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 0.6,
+        "center": [-2.5, -0.4, 3],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.8, 0.8, 0.8],
+          "kd": 0.5,
+          "ks": 0.3,
+          "kt": 0.9,
+          "kr": 0.8,
+          "alpha": 40
+        },
+        "r": 4,
+        "center": [3, 3, 6],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      }
+    ],
+    "lights": []
+  },
+  {
+    "name": "cena-3 Depth of Field",
+    "background": "Sky",
+    "dof": {
+      "active": true,
+      "focal_length": 4.5,
+      "r": 0.1,
+      "samples": 8
+    },
+    "camera": {
+      "position": [5.0, 2.0, -2.0],
+      "target": [-0.8, 0.0, 4.0],
+      "orientation": [0, 1, 0],
+      "fov": 0,
+      "image_plane_distance": 4,
+      "width": 640,
+      "height": 480,
+      "ambient_light": [0.6, 0.6, 0.6]
+    },
+    "objects": [
+      {
+        "kind": "Plane",
+        "material": {
+          "rgb": [0.1, 0.9, 0.3],
+          "kd": 0.4,
+          "ks": 0.2,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 0,
+        "center": [0,0,0],
+        "normal": [0,1,0],
+        "point": [0,-1,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.8, 0.3, 0.2],
+          "kd": 0.5,
+          "ks": 0.6,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 1,
+        "center": [-0.8,0,4],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.3, 0.2, 0.9],
+          "kd": 0.4,
+          "ks": 0.2,
+          "kt": 0.0,
+          "kr": 0.0,
+          "alpha": 40
+        },
+        "r": 0.6,
+        "center": [-2.5, -0.4, 3],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      },
+      {
+        "kind": "Sphere",
+        "material": {
+          "rgb": [0.8, 0.8, 0.8],
+          "kd": 0.5,
+          "ks": 0.3,
+          "kt": 0.9,
+          "kr": 0.8,
+          "alpha": 40
+        },
+        "r": 4,
+        "center": [3, 3, 6],
+        "normal": [0,0,0],
+        "point": [0,0,0]
+      }
+    ],
+    "lights": []
+  }
+]

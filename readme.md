@@ -37,3 +37,5 @@ Os materiais possuem:
 ###### Extras
 
 - [x] Planos
+- [x] Luz de ambiente
+- [x] Sky background

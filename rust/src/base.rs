@@ -94,6 +94,9 @@ impl Vector {
   pub fn from(x: f32, y: f32, z:f32) -> Vector {
     Vector {x, y, z}
   }
+  pub fn from_array(a: &[f32; 3]) -> Vector {
+    Vector::from(a[0], a[1], a[2])
+  }
 }
 impl Point {
   pub fn clone(&self) -> Point {
@@ -113,6 +116,9 @@ impl Point {
   pub fn from(x: f32, y: f32, z:f32) -> Point {
     Point {x, y, z}
   }
+  pub fn from_array(a: &[f32; 3]) -> Point {
+    Point::from(a[0], a[1], a[2])
+  }
 }
 impl Color {
   pub fn clip(&self) -> Color {
@@ -127,6 +133,9 @@ impl Color {
   }
   pub fn from(r:f32, g: f32, b: f32) -> Color {
     Color {r, g, b}
+  }
+  pub fn from_array(a: &[f32; 3]) -> Color {
+    Color::from(a[0], a[1], a[2])
   }
   pub fn black() -> Color {
     Color::from(0.0, 0.0, 0.0)
