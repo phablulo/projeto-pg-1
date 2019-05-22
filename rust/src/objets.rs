@@ -132,7 +132,7 @@ impl Light {
 */
 
 // ---
-#[derive(Debug)]
+// #[derive(Debug)]
 struct Bounds {
   tl: Point,
   tr: Point,
