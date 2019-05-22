@@ -71,7 +71,6 @@ fn default_scenes(camera: &mut Camera) {
   save_image(camera.take_picture(&spheres, &lights), "cena-3.png".to_string());
 
   let length = camera.focal_length_for_point(&Point::from(-0.8,  0.0, 4.0));
-  println!("Length {}", length);
   save_image(camera.take_dof_picture(&spheres, &lights, 0.1, length, 8), "cena-4.png".to_string());
   
   camera.set_image_plane_distance(4.0);
